@@ -1,6 +1,6 @@
 import java.util.*
 
-fun main(){
+fun main() {
     //primerEjercicio();
     //segundoEjercicio();
     //tercerEjercicio();
@@ -23,7 +23,7 @@ fun main(){
     //twentyOneExercise();
 }
 
-fun primerEjercicio (){
+fun primerEjercicio() {
     println("Ingrese el número de filas (M): ")
     val m = readLine()!!.toInt()
     println("Ingrese el número de columnas (N): ")
@@ -58,7 +58,7 @@ fun primerEjercicio (){
     }
 }
 
-fun segundoEjercicio(){
+fun segundoEjercicio() {
     println("Ingrese el tamaño de la matriz cuadrada (P): ")
     val p = readLine()!!.toInt()
     val matriz = Array(p) { IntArray(p) }
@@ -108,7 +108,7 @@ fun segundoEjercicio(){
     }
 }
 
-fun tercerEjercicio(){
+fun tercerEjercicio() {
     println("Ingrese el número de filas (A): ")
     val a = readLine()!!.toInt()
     println("Ingrese el número de columnas (B): ")
@@ -147,7 +147,7 @@ fun tercerEjercicio(){
     }
 }
 
-fun cuartoEjercicio(){
+fun cuartoEjercicio() {
     var n: Int
     var m: Int
 
@@ -198,7 +198,7 @@ fun cuartoEjercicio(){
     }
 }
 
-fun quintoEjercicio(){
+fun quintoEjercicio() {
     println("Ingrese el número de filas (N): ")
     val n = readLine()!!.toInt()
     println("Ingrese el número de columnas (M): ")
@@ -250,7 +250,7 @@ fun quintoEjercicio(){
     }
 }
 
-fun sixExercise(){
+fun sixExercise() {
     fun leerMatriz(N: Int, M: Int): Array<IntArray> {
         val matriz = Array(N) { IntArray(M) }
         val scanner = Scanner(System.`in`)
@@ -332,7 +332,7 @@ fun sixExercise(){
     executeAll();
 }
 
-fun sevenExercise(){
+fun sevenExercise() {
     fun leerMatriz(N: Int, M: Int): Array<IntArray> {
         val matriz = Array(N) { IntArray(M) }
         val scanner = Scanner(System.`in`)
@@ -471,7 +471,7 @@ fun sevenExercise(){
     executeSeven();
 }
 
-fun eightExercise(){
+fun eightExercise() {
     fun leerMatriz(N: Int): Array<IntArray> {
         val matriz = Array(N) { IntArray(N) }
         val scanner = Scanner(System.`in`)
@@ -524,7 +524,7 @@ fun eightExercise(){
     executeExample();
 }
 
-fun nineExercise(){
+fun nineExercise() {
     val scanner = Scanner(System.`in`)
 
     // Leer el número de sucursales
@@ -566,7 +566,7 @@ fun nineExercise(){
     println("El mes que menos vendió la compañía fue el mes ${mesMenorVenta + 1} con ${totalMes[mesMenorVenta]} ventas.")
 }
 
-fun tenExercise(){
+fun tenExercise() {
     val scanner = Scanner(System.`in`)
 
     print("Ingrese el número de estudiantes (M): ")
@@ -615,7 +615,7 @@ fun tenExercise(){
     }
 }
 
-fun elevenExercise(){
+fun elevenExercise() {
     val scanner = Scanner(System.`in`)
 
     // Leer la cantidad de empleados
@@ -658,20 +658,94 @@ fun elevenExercise(){
     }
 }
 
-fun twelveExercise(){}
+fun twelveExercise() {
+    println("Ingrese el tamaño N de la matriz (N debe ser impar y mayor que 3):")
+    val n = readlnOrNull()?.toIntOrNull() ?: 5
 
-fun thirteenExercise(){}
+    if (n % 2 == 0 || n <= 3) {
+        println("N debe ser un número impar y mayor que 3.")
+        return
+    }
 
-fun fourteenExercise(){}
+    val matriz = Array(n) { IntArray(n) { 0 } }
 
-fun fifteenExercise(){}
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matriz[i][j] = j
+        }
+    }
 
-fun sixteenExercise(){}
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            print("${matriz[i][j]} ")
+        }
+        println()
+    }
+}
+
+fun thirteenExercise() {
+    val n = 5
+    val matriz = Array(n) { IntArray(n) }
+
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matriz[i][j] = if (i == 0 || j == 0 || i == n - 1 || j == n - 1) 1 else 0
+        }
+    }
+
+    for (fila in matriz) {
+        println(fila.joinToString(" "))
+    }
+}
+
+fun fourteenExercise() {
+    val n = 5
+    val matriz = Array(n) { IntArray(n) }
+
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matriz[i][j] = if (i == j) i + 1 else 0
+        }
+    }
+
+    for (fila in matriz) {
+        println(fila.joinToString(" "))
+    }
+}
+
+fun fifteenExercise() {
+    val n = 5
+    val matriz = Array(n) { IntArray(n) }
+
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matriz[i][j] = i * j
+        }
+    }
+
+    for (fila in matriz) {
+        println(fila.joinToString(" "))
+    }
+}
+
+fun sixteenExercise() {
+    val n = 5
+    val matriz = Array(n) { IntArray(n) }
+
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matriz[i][j] = if (i % 2 == 0) j + 1 else n - j
+        }
+    }
+
+    for (fila in matriz) {
+        println(fila.joinToString(" "))
+    }
+}
 
 fun seventeenExercise() {
     val N = 5
 
-    // Validación: N debe ser impar y mayor que 3
     if (N % 2 == 0 || N <= 3) {
         println("N debe ser un número impar mayor que 3")
         return
@@ -681,22 +755,16 @@ fun seventeenExercise() {
 
     for (i in 0 until N) {
         for (j in 0 until N) {
-            // Poner "1" en los bordes
             if (i == 0 || i == N - 1 || j == 0 || j == N - 1) {
                 matriz[i][j] = 1
-            }
-            // Poner "1" en la diagonal principal
-            else if (i == j) {
+            } else if (i == j) {
                 matriz[i][j] = 1
-            }
-            // Colocar "0" en el resto
-            else {
+            } else {
                 matriz[i][j] = 0
             }
         }
     }
 
-    // Imprimir la matriz
     for (i in 0 until N) {
         for (j in 0 until N) {
             print("${matriz[i][j]} ")
@@ -705,9 +773,8 @@ fun seventeenExercise() {
     }
 }
 
-fun eighteenExercise(){
+fun eighteenExercise() {
     fun generarMatrizDiagonal(N: Int): Array<IntArray> {
-        // Crear una matriz N x N inicializada con ceros
         val matriz = Array(N) { IntArray(N) }
 
         var valor = 1
@@ -741,7 +808,7 @@ fun eighteenExercise(){
     }
 
     fun executeCompleteFunction() {
-        val N = 5  // Cambia este valor por el tamaño de la matriz
+        val N = 5
         if (N % 2 == 1 && N > 3) {
             val matriz = generarMatrizDiagonal(N)
             imprimirMatriz(matriz)
@@ -749,11 +816,10 @@ fun eighteenExercise(){
             println("El valor de N debe ser impar y mayor que 3.")
         }
     }
-
     executeCompleteFunction();
 }
 
-fun  nineteenExercise(){
+fun nineteenExercise() {
     fun generarMatrizZigzag(N: Int): Array<IntArray> {
         val matriz = Array(N) { IntArray(N) }
         var valor = N * N
@@ -769,7 +835,6 @@ fun  nineteenExercise(){
                 }
             }
         }
-
         return matriz
     }
 
@@ -792,7 +857,7 @@ fun  nineteenExercise(){
     executeFuction();
 }
 
-fun twentyOneExercise(){
+fun twentyOneExercise() {
     fun generarMatrizEspiral(N: Int): Array<IntArray> {
         val matriz = Array(N) { IntArray(N) }
         var valor = 1
@@ -845,6 +910,5 @@ fun twentyOneExercise(){
             println("El valor de N debe ser impar y mayor que 3.")
         }
     }
-
     executeAll();
 }
